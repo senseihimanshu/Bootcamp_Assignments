@@ -8,7 +8,7 @@ function focus(){
 function createItem(){
     const inputBoxContent = document.querySelector('.input-box').value;
     const msgElement = document.querySelector('.msg');
-    if(inputBoxContent != ''){
+    if(inputBoxContent !== ''){
         const newLi = document.createElement('li');
         newLi.textContent = inputBoxContent;
 
@@ -17,7 +17,6 @@ function createItem(){
         //Emptying the input box
         document.querySelector('.input-box').value = '';
     }else{
-        console.log("ran");
         setInterval(()=>{
             msgElement.classList.add('msg--hidden');
         }, 3000);
@@ -30,7 +29,6 @@ function createItem(){
 (function setUpEventListeners(){
     const addBtnElement = document.querySelector('.btn--add');
     if(addBtnElement){
-        console.log(addBtnElement);
         addBtnElement.addEventListener('click', createItem);
     }
 
