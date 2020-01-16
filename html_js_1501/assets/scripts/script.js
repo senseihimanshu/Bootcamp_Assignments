@@ -28,14 +28,18 @@ function createItem(){
 
 (function setUpEventListeners(){
     const addBtnElement = document.querySelector('.btn--add');
+    console.log(addBtnElement);
     if(addBtnElement){
+        console.log("I ran on line 32");
         addBtnElement.addEventListener('click', createItem);
     }
 
     document.addEventListener('keypress', function(event){
+        console.log("I ran on line 37");
         if(event.keyCode === 13){
             createItem();
         }
     });
+    console.log("I ran on line 40");
 })();
 
