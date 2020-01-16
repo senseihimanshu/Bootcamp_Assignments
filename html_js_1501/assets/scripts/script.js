@@ -27,7 +27,7 @@ function createItem(){
     focus();
 }
 
-(document.onload = function setUpEventListeners(){
+(function setUpEventListeners(){
     const addBtnElement = document.querySelector('.btn--add');
     if(addBtnElement){
         addBtnElement.addEventListener('click', createItem);
