@@ -7,7 +7,8 @@ function focus(){
 
 function createItem(){
     const inputBoxContent = document.querySelector('.input-box').value;
-    if(inputBoxContent !== ''){
+    const msgElement = document.querySelector('.msg');
+    if(inputBoxContent != ''){
         const newLi = document.createElement('li');
         newLi.textContent = inputBoxContent;
 
@@ -16,11 +17,26 @@ function createItem(){
         //Emptying the input box
         document.querySelector('.input-box').value = '';
     }else{
+        console.log("ran");
         setInterval(()=>{
-            document.querySelector('.msg').classList.add('msg--hidden');
+            msgElement.classList.add('msg--hidden');
         }, 2000);
-        document.querySelector('.msg').classList.remove('msg--hidden');
+        msgElement.classList.remove('msg--hidden');
     }
 
     focus();
 }
+
+(document.onload = function setUpEventListeners(){
+    const addBtnElement = document.querySelector('.btn--add');
+    if(addBtnElement){
+        addBtnElement.addEventListener('click', createItem);
+    }
+
+    document.addEventListener('keypress', function(event){
+        if(event.keyCode === 13){
+            createItem();
+        }
+    });
+})();
+
