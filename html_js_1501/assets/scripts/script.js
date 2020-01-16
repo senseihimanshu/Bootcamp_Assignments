@@ -20,7 +20,7 @@ function createItem(){
         console.log("ran");
         setInterval(()=>{
             msgElement.classList.add('msg--hidden');
-        }, 2000);
+        }, 3000);
         msgElement.classList.remove('msg--hidden');
     }
 
@@ -30,6 +30,7 @@ function createItem(){
 (function setUpEventListeners(){
     const addBtnElement = document.querySelector('.btn--add');
     if(addBtnElement){
+        console.log(addBtnElement);
         addBtnElement.addEventListener('click', createItem);
     }
 
