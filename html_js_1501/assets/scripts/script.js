@@ -1,3 +1,10 @@
+function focus(){
+    const focusElement = document.querySelector('.input-box');
+    if(focusElement){
+        focusElement.focus();
+    }
+};
+
 function createItem(){
     const inputBoxContent = document.querySelector('.input-box').value;
     if(inputBoxContent !== ''){
@@ -14,4 +21,6 @@ function createItem(){
         }, 2000);
         document.querySelector('.msg').classList.remove('msg--hidden');
     }
+
+    focus();
 }
